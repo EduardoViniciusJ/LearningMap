@@ -17,6 +17,7 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 - **SQL Server**
 - **xUnit e FluentAssertions (Testes)**
 
+---
 
 ## Funcionalidades
 
@@ -29,25 +30,25 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 - Criar novos mapas/projetos, contendo **Conhecimento**, **Estratégia** e **Motivação**.
 - Consultar todos os mapas ou um específico por ID.
 - Atualizar ou remover mapas.
-- Paginação de mapas com metadados no cabeçalho.
+- Paginação de mapas com metadados no cabeçalho (`X-Pagination`).
 
 ### Conhecimento
 - Cadastro de itens que o usuário deseja aprender dentro de um mapa/projeto.
 - Consultar conhecimentos por ID ou por mapa/projeto.
 - Atualizar e remover conhecimentos.
-- Paginação de resultados.
+- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
 
 ### Estratégia
 - Cadastro de estratégias de aprendizado para cada mapa/projeto.
-- Consultar estratégias por ID ou mapa/projeto.
+- Consultar estratégias por ID ou por mapa/projeto.
 - Atualizar e remover estratégias.
-- Paginação de resultados.
+- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
 
 ### Motivação
 - Cadastro de motivações que orientam o aprendizado.
-- Consultar motivações por ID ou mapa/projeto.
+- Consultar motivações por ID ou por mapa/projeto.
 - Atualizar e remover motivações.
-- Paginação de resultados.
+- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
 
 ---
 
@@ -60,6 +61,7 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 ### Mapas/Projetos
 - `GET /api/projeto` → Listar todos os mapas/projetos.
 - `GET /api/projeto/{id}` → Obter mapa/projeto por ID.
+- `GET /api/projeto/pagination` → Listar mapas/projetos com paginação.
 - `POST /api/projeto` → Criar um novo mapa/projeto básico.
 - `POST /api/projeto/completo` → Criar um mapa/projeto completo com **Conhecimento**, **Estratégia** e **Motivação**.
 - `PUT /api/projeto/{id}` → Atualizar mapa/projeto.
@@ -69,6 +71,7 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 - `GET /api/conhecimento` → Listar todos os conhecimentos.
 - `GET /api/conhecimento/{id}/conhecimento` → Obter conhecimento por ID.
 - `GET /api/conhecimento/{id}/projeto` → Obter conhecimentos de um mapa/projeto.
+- `GET /api/conhecimento/pagination` → Listar conhecimentos com paginação.
 - `POST /api/conhecimento` → Criar conhecimento.
 - `PUT /api/conhecimento/{projetoId}/conhecimento/{id}` → Atualizar conhecimento.
 - `DELETE /api/conhecimento/{projetoId}/conhecimento/{id}` → Remover conhecimento.
@@ -77,6 +80,7 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 - `GET /api/estrategia` → Listar todas as estratégias.
 - `GET /api/estrategia/{id}/estrategia` → Obter estratégia por ID.
 - `GET /api/estrategia/{id}/projeto` → Obter estratégias de um mapa/projeto.
+- `GET /api/estrategia/pagination` → Listar estratégias com paginação.
 - `POST /api/estrategia` → Criar estratégia.
 - `PUT /api/estrategia/{projetoId}/estrategia/{id}` → Atualizar estratégia.
 - `DELETE /api/estrategia/{projetoId}/estrategia/{id}` → Remover estratégia.
@@ -85,15 +89,9 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 - `GET /api/motivacao` → Listar todas as motivações.
 - `GET /api/motivacao/{id}/motivacao` → Obter motivação por ID.
 - `GET /api/motivacao/{id}/projeto` → Obter motivações de um mapa/projeto.
+- `GET /api/motivacao/pagination` → Listar motivações com paginação.
 - `POST /api/motivacao` → Criar motivação.
 - `PUT /api/motivacao/{projetoId}/motivacao/{id}` → Atualizar motivação.
 - `DELETE /api/motivacao/{projetoId}/motivacao/{id}` → Remover motivação.
 
 ---
-
-## Configuração do Projeto
-
-1. Clone o repositório:
-```bash
-git clone <seu-repo>
-cd MapL
