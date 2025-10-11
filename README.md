@@ -7,7 +7,7 @@ Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, 
 
 ## Tecnologias Utilizadas
 
-- **.NET**
+- **.NET 8**
 - **ASP.NET Core Web API**
 - **Entity Framework Core**
 - **ASP.NET Core Identity**
