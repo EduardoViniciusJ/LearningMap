@@ -1,6 +1,6 @@
 # LearningMap
 
-MapL é uma aplicação backend desenvolvida em **.NET** que auxilia os usuários a estruturarem seu próprio processo de aprendizado, com base nos princípios do **metaaprendizado**. A aplicação permite criar "mapas" de aprendizado com informações organizadas em **Conhecimento**, **Estratégia** e **Motivação**, garantindo um aprendizado mais eficiente e planejado.
+LearningMap é uma API backend desenvolvida em **.NET** que auxilia os usuários a estruturarem seu próprio processo de aprendizado, com base nos princípios do **metaaprendizado**. A aplicação permite criar "mapas" de aprendizado com informações organizadas em **Conhecimento**, **Estratégia** e **Motivação**, garantindo um aprendizado mais eficiente e planejado.
 
 ---
 
