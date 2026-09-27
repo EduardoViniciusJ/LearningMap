@@ -1,97 +1,106 @@
-# LearningMap 
+# LearningMap — .NET API
 
-LearningMap é uma API backend desenvolvida em **.NET** que auxilia os usuários a estruturarem seu próprio **projeto de aprendizado**, com base nos princípios do mapa de **metaaprendizado**.  
-Cada **mapa/projeto** contém informações organizadas sobre **Conhecimento**, **Estratégia** e **Motivação**, permitindo que o aprendizado seja planejado e mais eficiente.
+LearningMap is a backend API developed in **.NET** that helps users structure their own **learning projects** based on **metalearning** map principles.
 
----
-
-## Tecnologias Utilizadas
-
-- **.NET 8**
-- **ASP.NET Core Web API**
-- **Entity Framework Core**
-- **ASP.NET Core Identity**
-- **JWT Bearer Authentication**
-- **AutoMapper**
-- **Paginação**
-- **SQL Server**
-- **xUnit e FluentAssertions (Testes)**
+Each **map/project** contains organized information about **Knowledge**, **Strategy**, and **Motivation**, making the learning process planned and much more efficient.
 
 ---
 
-## Funcionalidades
+## Technologies Used
 
-### Autenticação e Autorização
-- Registro de usuários com validação de credenciais.
-- Login com geração de **JWT**.
-- Controle de acesso baseado em roles (`user`).
-
-### Mapas/Projetos de Aprendizado
-- Criar novos mapas/projetos, contendo **Conhecimento**, **Estratégia** e **Motivação**.
-- Consultar todos os mapas ou um específico por ID.
-- Atualizar ou remover mapas.
-- Paginação de mapas com metadados no cabeçalho (`X-Pagination`).
-
-### Conhecimento
-- Cadastro de itens que o usuário deseja aprender dentro de um mapa/projeto.
-- Consultar conhecimentos por ID ou por mapa/projeto.
-- Atualizar e remover conhecimentos.
-- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
-
-### Estratégia
-- Cadastro de estratégias de aprendizado para cada mapa/projeto.
-- Consultar estratégias por ID ou por mapa/projeto.
-- Atualizar e remover estratégias.
-- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
-
-### Motivação
-- Cadastro de motivações que orientam o aprendizado.
-- Consultar motivações por ID ou por mapa/projeto.
-- Atualizar e remover motivações.
-- Paginação de resultados com metadados no cabeçalho (`X-Pagination`).
+* **.NET 8**
+* **ASP.NET Core Web API**
+* **Entity Framework Core**
+* **ASP.NET Core Identity**
+* **JWT Bearer Authentication**
+* **AutoMapper**
+* **Pagination**
+* **SQL Server**
+* **xUnit and FluentAssertions (Testing)**
 
 ---
 
-## Endpoints Principais
+## Features
+
+### Authentication & Authorization
+
+* User registration with credential validation.
+* Login with **JWT** token generation.
+* Role-based access control (`user`).
+
+### Learning Maps/Projects
+
+* Create new maps/projects containing **Knowledge**, **Strategy**, and **Motivation**.
+* Query all maps or a specific one by ID.
+* Update or remove maps.
+* Map pagination with header metadata (`X-Pagination`).
+
+### Knowledge
+
+* Register items the user wants to learn within a map/project.
+* Query knowledge items by ID or by map/project.
+* Update and remove knowledge items.
+* Result pagination with header metadata (`X-Pagination`).
+
+### Strategy
+
+* Register learning strategies for each map/project.
+* Query strategies by ID or by map/project.
+* Update and remove strategies.
+* Result pagination with header metadata (`X-Pagination`).
+
+### Motivation
+
+* Register motivations that guide the learning process.
+* Query motivations by ID or by map/project.
+* Update and remove motivations.
+* Result pagination with header metadata (`X-Pagination`).
+
+---
+
+## Main Endpoints
 
 ### Auth
-- `POST /api/auth/register` → Registrar um novo usuário.
-- `POST /api/auth/login` → Autenticar usuário e gerar token JWT.
 
-### Mapas/Projetos
-- `GET /api/projeto` → Listar todos os mapas/projetos.
-- `GET /api/projeto/{id}` → Obter mapa/projeto por ID.
-- `GET /api/projeto/pagination` → Listar mapas/projetos com paginação.
-- `POST /api/projeto` → Criar um novo mapa/projeto básico.
-- `POST /api/projeto/completo` → Criar um mapa/projeto completo com **Conhecimento**, **Estratégia** e **Motivação**.
-- `PUT /api/projeto/{id}` → Atualizar mapa/projeto.
-- `DELETE /api/projeto/{id}` → Deletar mapa/projeto.
+* `POST /api/auth/register` → Register a new user.
+* `POST /api/auth/login` → Authenticate user and generate a JWT token.
 
-### Conhecimento
-- `GET /api/conhecimento` → Listar todos os conhecimentos.
-- `GET /api/conhecimento/{id}/conhecimento` → Obter conhecimento por ID.
-- `GET /api/conhecimento/{id}/projeto` → Obter conhecimentos de um mapa/projeto.
-- `GET /api/conhecimento/pagination` → Listar conhecimentos com paginação.
-- `POST /api/conhecimento` → Criar conhecimento.
-- `PUT /api/conhecimento/{projetoId}/conhecimento/{id}` → Atualizar conhecimento.
-- `DELETE /api/conhecimento/{projetoId}/conhecimento/{id}` → Remover conhecimento.
+### Maps/Projects
 
-### Estratégia
-- `GET /api/estrategia` → Listar todas as estratégias.
-- `GET /api/estrategia/{id}/estrategia` → Obter estratégia por ID.
-- `GET /api/estrategia/{id}/projeto` → Obter estratégias de um mapa/projeto.
-- `GET /api/estrategia/pagination` → Listar estratégias com paginação.
-- `POST /api/estrategia` → Criar estratégia.
-- `PUT /api/estrategia/{projetoId}/estrategia/{id}` → Atualizar estratégia.
-- `DELETE /api/estrategia/{projetoId}/estrategia/{id}` → Remover estratégia.
+* `GET /api/projeto` → List all maps/projects.
+* `GET /api/projeto/{id}` → Get a map/project by ID.
+* `GET /api/projeto/pagination` → List maps/projects with pagination.
+* `POST /api/projeto` → Create a basic new map/project.
+* `POST /api/projeto/completo` → Create a complete map/project with **Knowledge**, **Strategy**, and **Motivation**.
+* `PUT /api/projeto/{id}` → Update a map/project.
+* `DELETE /api/projeto/{id}` → Delete a map/project.
 
-### Motivação
-- `GET /api/motivacao` → Listar todas as motivações.
-- `GET /api/motivacao/{id}/motivacao` → Obter motivação por ID.
-- `GET /api/motivacao/{id}/projeto` → Obter motivações de um mapa/projeto.
-- `GET /api/motivacao/pagination` → Listar motivações com paginação.
-- `POST /api/motivacao` → Criar motivação.
-- `PUT /api/motivacao/{projetoId}/motivacao/{id}` → Atualizar motivação.
-- `DELETE /api/motivacao/{projetoId}/motivacao/{id}` → Remover motivação.
+### Knowledge
 
----
+* `GET /api/conhecimento` → List all knowledge items.
+* `GET /api/conhecimento/{id}/conhecimento` → Get a knowledge item by ID.
+* `GET /api/conhecimento/{id}/projeto` → Get knowledge items for a map/project.
+* `GET /api/conhecimento/pagination` → List knowledge items with pagination.
+* `POST /api/conhecimento` → Create a knowledge item.
+* `PUT /api/conhecimento/{projetoId}/conhecimento/{id}` → Update a knowledge item.
+* `DELETE /api/conhecimento/{projetoId}/conhecimento/{id}` → Remove a knowledge item.
+
+### Strategy
+
+* `GET /api/estrategia` → List all strategies.
+* `GET /api/estrategia/{id}/estrategia` → Get a strategy by ID.
+* `GET /api/estrategia/{id}/projeto` → Get strategies for a map/project.
+* `GET /api/estrategia/pagination` → List strategies with pagination.
+* `POST /api/estrategia` → Create a strategy.
+* `PUT /api/estrategia/{projetoId}/estrategia/{id}` → Update a strategy.
+* `DELETE /api/estrategia/{projetoId}/estrategia/{id}` → Remove a strategy.
+
+### Motivation
+
+* `GET /api/motivacao` → List all motivations.
+* `GET /api/motivacao/{id}/motivacao` → Get a motivation by ID.
+* `GET /api/motivacao/{id}/projeto` → Get motivations for a map/project.
+* `GET /api/motivacao/pagination` → List motivations with pagination.
+* `POST /api/motivacao` → Create a motivation.
+* `PUT /api/motivacao/{projetoId}/motivacao/{id}` → Update a motivation.
+* `DELETE /api/motivacao/{projetoId}/motivacao/{id}` → Remove a motivation.
